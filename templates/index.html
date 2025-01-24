@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detector</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- Boxicon CDN -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="icon" href="{{ url_for('static', filename='eye-solid.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header Content -->
+        <header>
+            <div class="nav-wrapper">
+                <!-- <a class="nav-item-wrapper">
+                    <box-icon name='support' color="#FFCF75"></box-icon>
+                    <span>Contact Us</span>
+                </a> -->
+                <a class="nav-item-wrapper" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <box-icon name='info-circle' type='solid' color="#FFCF75"></box-icon>
+                    <span>About Us</span>
+                </a>
+            </div>
+        </header>
+
+
+        <!-- Main Content -->
+        <div class="content-wrapper mt-10">
+
+            <div class="introductory-wrapper s-screen-intro">
+
+                <!-- Logo SVG -->
+                <div class="logo">
+                    <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path
+                            d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                    </svg>
+                </div>
+
+                <h1>FraudDetector</h1>
+                <h3>Protecting You from Fraud, One Detection at a Time</h3>
+                <p>FraudDetector is a tool designed to analyze email content and identify potential signs of fraudulent
+                    activity. Using advanced algorithms and pattern recognition, it helps users detect phishing
+                    attempts, scams, or suspicious messages, ensuring a safer digital communication experience.</p>
+
+            </div>
+
+
+            <div class="form-wrapper">
+                <form id="form" class="form" method="POST">
+
+                    <div class="form-group mb-3">
+                        <input id="emailAddress" type="email" class="form-control" placeholder="Enter email address (optional)">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <textarea id="emailContent" class="form-control" rows="10"
+                            placeholder="Enter email content here" required></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="btn btn-success py-3 d-flex flex-row align-items-center justify-content-center w-100">
+                        <box-icon name='bulb' color="#fff"></box-icon>
+                        <span>Submit</span>
+
+                    </button>
+
+                </form>
+            </div>
+
+
+
+            <!-- Bootstrap Accordion -->
+            <div class="accordion" id="accordionExample">
+
+                <div class="l-screen-intro">
+                    <div class="introductory-wrapper">
+
+                        <!-- Logo SVG -->
+                        <div class="logo">
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                <path
+                                    d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                            </svg>
+                        </div>
+
+                        <h1>FraudDetector</h1>
+                        <h2>Protecting You from Fraud, One Detection at a Time</h2>
+                        <p>FraudDetector is a tool designed to analyze email content and identify potential signs of
+                            fraudulent activity. Using advanced algorithms and pattern recognition, it helps users
+                            detect phishing attempts, scams, or suspicious messages, ensuring a safer digital
+                            communication experience.</p>
+
+                    </div>
+                </div>
+
+
+                <h1>Frequently Asked Questions (FAQ)</h1>
+
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
+                                aria-expanded="true" aria-controls="collapseTwo">
+                            How does the Fraud Detector work?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" 
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>FraudDetector</strong> utilizes machine learning algorithms and natural language processing to
+                            analyze email content for red flags, such as suspicious language patterns, phishing links, or known scam indicators. 
+                            It cross-references these elements with a database of fraudulent activities to provide an accurate assessment of potential risks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            How do machine learning algorithms improve fraud detection?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Machine learning algorithms improve fraud detection by analyzing large datasets to identify
+                            hidden patterns and trends that may not be immediately obvious. As the system learns from
+                            previous data, it becomes better at detecting subtle signs of fraud, adapting to new fraud
+                            tactics over time. This makes it more accurate and efficient in identifying potential
+                            fraudulent activities.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What should I do if FraudDetector detects a fraudulent email?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            If FraudDetector flags an email as fraudulent, avoid responding to it or clicking on any
+                            links. Mark the email as spam or phishing in your email client and delete it. Additionally,
+                            consider reporting the email to your email provider or a relevant authority to help prevent
+                            further scams.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- Modal Spam Result -->
+    <div class="modal fade" id="spamModal" tabindex="-1" aria-labelledby="spamModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"> <!-- Added modal-dialog-centered class -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="spamModalLabel">Spam Detection Result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- The result will be dynamically inserted here -->
+                    <p class="text-center">The email content is classified as</p>
+                    <div id="resultMessage" class="text-center"></div>
+                    <hr>
+                    <br>
+                    <!-- Single Tip Section -->
+                    <div id="spamTip" class="alert alert-info" role="alert">
+                        <h6>Tip to Prevent Spam:</h6>
+                        <p id="tipMessage"></p>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Note:</strong> The spam detection results are based on AI-powered analysis. While we
+                        strive for accuracy, we recommend exercising caution and not fully relying on AI for making
+                        important decisions. Always verify the content and avoid sharing sensitive information.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal About Us -->
+    <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">About Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to the Fraud Email Detector app!</p>
+                    <p>The Fraud Email Detector app is our capstone project at the University of the Cordilleras,
+                        Philippines. Designed to help users detect and avoid email scams, this app serves as a
+                        practical tool for online safety and fraud prevention.</p>
+                    <p>We are proud to share this project and hope it provides value to its users. Thank you for
+                        supporting our work!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

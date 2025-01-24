@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* Regular default font weight */
+    font-size: 1.125;
+    line-height: 1.5;
+    color: #fff;
+    background: linear-gradient(to bottom left, #008F7A, #008E9B, #0089BA, #0081CF, #2C73D2, #845EC2);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 0 50px;
+}
+
+header {
+    padding: 30px 0
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-item-wrapper:hover {
+    color: #FFCF75;
+}
+
+.introductory-wrapper {
+    margin: 0 auto 40px;
+    text-align: center;
+
+    .logo {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #FFCF75;
+        font-weight: 700;
+        margin: 10px 0 25px;
+    }
+
+}
+
+.accordion {
+    margin-top: 60px;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #FFCF75;
+    }
+}
+
+.l-screen-intro {
+    display: none;
+}
+
+.modal-content {
+    color: black !important;
+}
+
+
+@media screen and (min-width: 991px) {
+
+    html,
+    body {
+        padding: 0px;
+    }
+
+    .nav-wrapper {
+        justify-content: end;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8%;
+        margin-top: 100px;
+    }
+
+    .l-screen-intro {
+        display: block;
+    }
+
+    .s-screen-intro {
+        display: none;
+    }
+
+
+    .form-wrapper {
+        width: 50%;
+        margin-top: 160px;
+    }
+
+    .accordion {
+        width: 50%;
+        margin-top: 50px;
+
+        .introductory-wrapper {
+            margin: 0 0 40px;
+            text-align: left;
+
+            .logo {
+                margin: 0;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    }
+
+}

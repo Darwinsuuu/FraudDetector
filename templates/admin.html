@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detector</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- Boxicon CDN -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="icon" href="{{ url_for('static', filename='eye-solid.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">FraudDetector</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="d-flex flex-row justify-content-end mt-5 gap-3">
+            <button id="download-report" class="btn btn-success">Download Report</button>
+            <button id="send-report" class="btn btn-light">Send Report to Authorities</button>
+        </div>
+
+        <div class="row mt-3 col-12 col-md-6">
+            <div class="col-12 col-md-4 mb-3">
+                <label for="start-date-filter">Start Date:</label>
+                <input type="date" id="start-date-filter" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <label for="end-date-filter">End Date:</label>
+                <input type="date" id="end-date-filter" class="form-control">
+            </div>
+
+            <div class="col-12 col-md-4 mt-2 mt-md-4">
+                <button id="reset-filter" class="btn btn-light w-100">Reset Filter</button>
+            </div>
+        </div>
+
+
+        <div class="table-responsive mt-5 mt-md-3">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Email</th>
+                        <th>Email Content</th>
+                        <th>Spam</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody id="email-table-body">
+                    <!-- Rows will be appended dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination-controls">
+                <!-- Page buttons will be generated dynamically -->
+            </ul>
+        </nav>
+
+    </div>
+
+
+    <!-- Bootstrap JS (optional for interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detector</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- Boxicon CDN -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="icon" href="{{ url_for('static', filename='eye-solid.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="overflow-hidden p-0 m-0">
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Fraud Detector</h4>
+                </div>
+                <div class="card-body">
+                    <form id="loginForm">
+                        <div class="mb-4">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="mb-4 row align-items-end">
+                            <div class="col-12 mb-2 col-md-7 mb-md-0">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Enter your password" required>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="col-12 col-md-8 w-100">
+                                    <button type="button" class="btn btn-success w-100 py-2" id="getOTP">Get
+                                        OTP</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info message for email sent -->
+                        <div id="otpMessage" class="alert alert-info d-none" role="alert"></div>
+
+                        <!-- Error message for invalid username/password -->
+                        <div id="errorMessage" class="alert alert-danger d-none" role="alert"></div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

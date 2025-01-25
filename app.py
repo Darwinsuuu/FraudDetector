@@ -52,8 +52,8 @@ print(report)
 # Email sending configuration
 SMTP_SERVER = 'smtp.gmail.com'  # Example: Gmail SMTP server
 SMTP_PORT = 587
-EMAIL_ADDRESS = 'personal.darwinlabiste@gmail.com'  # Replace with your email
-EMAIL_PASSWORD = 'mjir ccdn alwu luqd'  # Replace with your email password
+EMAIL_ADDRESS = 'emailphishing12@gmail.com'  # Replace with your email
+EMAIL_PASSWORD = 'xoot xlqk kcgm bbof'  # Replace with your email password
 
 # Function to predict message
 def predict_message(message):

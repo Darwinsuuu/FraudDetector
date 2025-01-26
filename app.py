@@ -16,6 +16,10 @@ from io import BytesIO
 import xlsxwriter
 from email.mime.base import MIMEBase
 from email import encoders
+from flask import Flask
+from dotenv import load_dotenv
+
+
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -23,6 +27,12 @@ CORS(app)  # Enable CORS for all routes
 
 # Secret key for sessions (important for security)
 app.secret_key = os.urandom(24)
+
+load_dotenv('.env.local')
+print("HOST: " , os.getenv('DB_HOST'))
+print("USERNAME: " , os.getenv('DB_USER'))
+print("PASSWORD: " , os.getenv('DB_PASSWORD'))
+print("DB NAME: " , os.getenv('DB_NAME'))
 
 # Load and train the model
 dataset = pd.read_csv('datasets/emails.csv')  # Make sure the 'emails.csv' is present in your project folder
@@ -52,8 +62,8 @@ print(report)
 # Email sending configuration
 SMTP_SERVER = 'smtp.gmail.com'  # Example: Gmail SMTP server
 SMTP_PORT = 587
-EMAIL_ADDRESS = 'emailphishing12@gmail.com'  # Replace with your email
-EMAIL_PASSWORD = 'xoot xlqk kcgm bbof'  # Replace with your email password
+EMAIL_ADDRESS = os.getenv('EMAIL_ADDRESS')  # Replace with your email
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')  # Replace with your email password
 
 # Function to predict message
 def predict_message(message):
@@ -67,10 +77,10 @@ def open_db_connection():
     try:
         # Establish connection to the database
         db_connection = mysql.connector.connect(
-            host="localhost",        # Change to your MySQL host (e.g., 'localhost' or IP address)
-            user="root",    # Your MySQL username
-            password="",  # Your MySQL password
-            database="fraud_detector_db" # The name of the database to connect to
+            host=os.getenv('DB_HOST'),        # Change to your MySQL host (e.g., 'localhost' or IP address)
+            user=os.getenv('DB_USER'),    # Your MySQL username
+            password=os.getenv('DB_PASSWORD'),  # Your MySQL password
+            database=os.getenv('DB_NAME') # The name of the database to connect to
         )
         if db_connection.is_connected():
             print("Successfully connected to the database")
@@ -401,5 +411,5 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run()
-    # app.run(debug=True)
+    # app.run()
+    app.run(debug=True)

@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    const apiUrl = "http://detectfraud.tech/api/";
+    const apiUrl = window.location.origin + "/api/";
     let countdownTimer;
     const rowsPerPage = 8; // Number of rows per page
     let currentPage = 1; // Current active page

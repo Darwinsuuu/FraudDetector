@@ -69,7 +69,8 @@
                 <form id="form" class="form" method="POST">
 
                     <div class="form-group mb-3">
-                        <input id="emailAddress" type="email" class="form-control" placeholder="Enter email address (optional)">
+                        <input id="emailAddress" type="email" class="form-control"
+                            placeholder="Enter email address (optional)">
                     </div>
 
                     <div class="form-group mb-3">
@@ -121,17 +122,20 @@
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" 
-                                aria-expanded="true" aria-controls="collapseTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             How does the Fraud Detector work?
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" 
-                         data-bs-parent="#accordionExample">
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>FraudDetector</strong> utilizes machine learning algorithms and natural language processing to
-                            analyze email content for red flags, such as suspicious language patterns, phishing links, or known scam indicators. 
-                            It cross-references these elements with a database of fraudulent activities to provide an accurate assessment of potential risks.
+                            <strong>FraudDetector</strong> utilizes machine learning algorithms and natural language
+                            processing to
+                            analyze email content for red flags, such as suspicious language patterns, phishing links,
+                            or known scam indicators.
+                            It cross-references these elements with a database of fraudulent activities to provide an
+                            accurate assessment of potential risks.
                         </div>
                     </div>
                 </div>
@@ -230,6 +234,36 @@
                         practical tool for online safety and fraud prevention.</p>
                     <p>We are proud to share this project and hope it provides value to its users. Thank you for
                         supporting our work!</p>
+
+                    <h6 class="mt-4 mb-3">Developed by:</h6>
+                    <div class="d-flex flex-wrap justify-content-center gap-5">
+
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='1.png') }}" class="card-img-top" alt="1.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='2.png') }}" class="card-img-top" alt="2.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='3.png') }}" class="card-img-top" alt="3.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='4.png') }}" class="card-img-top" alt="4.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='5.png') }}" class="card-img-top" alt="5.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='6.png') }}" class="card-img-top" alt="6.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='7.png') }}" class="card-img-top" alt="7.png">
+                        </div>
+                        <div class="img-dev-wrapper">
+                            <img src="{{ url_for('static', filename='8.png') }}" class="card-img-top" alt="8.png">
+                        </div>
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>

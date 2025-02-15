@@ -90,6 +90,9 @@ header {
     color: black !important;
 }
 
+.img-dev-wrapper {
+    width: 35%;
+}
 
 @media screen and (min-width: 991px) {
 
@@ -144,6 +147,10 @@ header {
             margin-bottom: 20px;
             text-align: left;
         }
+    }
+
+    .img-dev-wrapper {
+        width: 20%;
     }
 
 }
